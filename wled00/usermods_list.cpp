@@ -18,8 +18,9 @@
 #include "../usermods/buzzer/usermod_v2_buzzer.h"
 #endif
 #ifdef USERMOD_SENSORSTOMQTT
-#include "usermod_v2_SensorsToMqtt.h"
+#include "../usermods/buzzer/usermod_v2_SensorsToMqtt.h"
 #endif
+#include "usermod_servos.h"
 
 void registerUsermods()
 {
@@ -39,4 +40,6 @@ void registerUsermods()
 #ifdef USERMOD_SENSORSTOMQTT
   usermods.add(new UserMod_SensorsToMQTT());
 #endif
+  usermods.add(new UsermodServos());
+
 }
